@@ -22,7 +22,7 @@ export default function ServicesGrid() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => {
+          {[...services].sort((a, b) => a.name.localeCompare(b.name)).map((service, index) => {
             const Icon = service.icon;
             return (
               <Link

@@ -9,58 +9,52 @@ const questionCards = [
     gradient: 'from-pink-500 to-rose-500',
   },
   {
-    question: 'Looking for legal documentation support?',
-    answer: 'Connect with para-legal experts',
-    link: '/services/para-legal',
-    gradient: 'from-slate-600 to-gray-700',
+    question: 'Need custom fabrication or exterior cladding work?',
+    answer: 'Connect with fabrication specialists',
+    link: '/services/fabrication',
+    gradient: 'from-zinc-500 to-gray-700',
+  },
+  {
+    question: 'Looking for financial planning, loans or insurance?',
+    answer: 'Get matched with finance experts',
+    link: '/services/Financial Services',
+    gradient: 'from-emerald-500 to-teal-600',
   },
   {
     question: 'Want to renovate or redesign your space?',
     answer: 'Explore interior design professionals',
-    link: '/services/interior',
+    link: '/services/Interior Designers',
     gradient: 'from-fuchsia-500 to-pink-600',
   },
   {
-    question: 'Planning a construction or civil project?',
-    answer: 'Browse civil engineering contractors',
-    link: '/services/civil',
-    gradient: 'from-orange-500 to-amber-600',
+    question: 'Looking for legal documentation or government liaison support?',
+    answer: 'Connect with para-legal experts',
+    link: '/services/Para Legal Assistance',
+    gradient: 'from-slate-600 to-gray-700',
   },
   {
-    question: 'Need financial planning or accounting help?',
-    answer: 'Get matched with finance experts',
-    link: '/services/finance',
-    gradient: 'from-emerald-500 to-teal-600',
-  },
-  {
-    question: 'Looking for waste disposal solutions?',
-    answer: 'Find waste management services',
-    link: '/services/waste-management',
-    gradient: 'from-teal-600 to-cyan-600',
-  },
-  {
-    question: 'Need custom fabrication work done?',
-    answer: 'Connect with fabrication specialists',
-    link: '/services/fabrication',
-    gradient: 'from-slate-600 to-gray-600',
-  },
-  {
-    question: 'Searching for property consultation?',
+    question: 'Searching for property consultation or real estate advisory?',
     answer: 'Discover property advisors',
-    link: '/services/property',
+    link: '/services/Property Consultants',
     gradient: 'from-cyan-600 to-teal-700',
   },
   {
-    question: 'Planning a corporate or educational trip?',
+    question: 'Planning a corporate or leisure trip?',
     answer: 'Explore travel management services',
-    link: '/services/travel',
+    link: '/services/Travel Consultants',
     gradient: 'from-sky-500 to-blue-600',
   },
   {
-    question: 'Want to arrange an industrial visit?',
-    answer: 'Find industrial visit organizers',
-    link: '/services/industrial-visit',
-    gradient: 'from-amber-500 to-orange-600',
+    question: 'Planning a construction or civil project?',
+    answer: 'Browse turnkey construction specialists',
+    link: '/services/Turnkey Constructions',
+    gradient: 'from-orange-500 to-amber-600',
+  },
+  {
+    question: 'Need bulk construction materials supplied to site?',
+    answer: 'Get reliable material supply partners',
+    link: '/services/construction-material',
+    gradient: 'from-stone-500 to-amber-700',
   },
 ];
 
@@ -77,7 +71,7 @@ export default function PopularCategories() {
             Tell Us What You Need
           </h2>
           <p className="text-lg text-gray-600">
-            Select the service that matches your requirements and get connected instantly
+            Select the service that matches your requirements and get connected with an in-house approved specialist instantly
           </p>
         </div>
 
@@ -89,7 +83,6 @@ export default function PopularCategories() {
               className="group relative bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-transparent hover:shadow-2xl transition-all duration-300 overflow-hidden"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-
               <div className="relative z-10">
                 <div className="flex items-start gap-4 mb-3">
                   <HelpCircle className="w-6 h-6 text-teal-600 group-hover:text-white transition-colors flex-shrink-0 mt-1" />
@@ -97,7 +90,6 @@ export default function PopularCategories() {
                     {card.question}
                   </h3>
                 </div>
-
                 <div className="flex items-center justify-between pl-10">
                   <p className="text-sm text-gray-600 group-hover:text-white/90 transition-colors">
                     {card.answer}
