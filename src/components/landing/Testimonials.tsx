@@ -21,11 +21,11 @@ const testimonials = [
     avatar: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=100&h=100',
   },
   {
-    name: 'Amit Patel',
-    role: 'Founder, GreenEarth Initiative',
-    content: 'The waste management vendor they connected us with transformed our sustainability program. Professional, efficient, and genuinely committed to environmental impact.',
+    name: 'Amit Desai',
+    role: 'Director, Nexus Warehousing',
+    content: 'Creativee Solutions delivered our warehouse construction on time and within budget. HOC managed the entire coordination seamlessly — we never had to chase anyone.',
     rating: 5,
-    service: 'Waste Management',
+    service: 'Construction',
     avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100',
   },
   {

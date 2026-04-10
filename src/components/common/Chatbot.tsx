@@ -15,7 +15,10 @@ RULES:
 
 Head Held High Info:
 - Free for clients, verified vendors, quotes in 24hrs
-- Services: Industrial Visit, Waste Management, Travel, Event Management, Para Legal, Property, Finance, Civil, Interior Design, Fabrication
+- Services: Event Management, Fabrication, Financial Services, Interior Design, Para Legal Assistance, Property Consulting, Travel Management, Turnkey Construction, Construction Material Supply
+- All specialists are In-House HOC Approved
+- B2B only — enterprise and business clients
+- HOC manages end-to-end delivery
 - Contact: hello@headheldhigh.com | +1 (234) 567-890`;
 
 interface Message { role: 'user' | 'assistant'; content: string; }
@@ -185,6 +188,7 @@ export default function Chatbot() {
 
       {/* Toggle */}
       <button
+        data-chatbot-trigger="true"
         onClick={() => setIsOpen(p => !p)}
         className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95"
       >

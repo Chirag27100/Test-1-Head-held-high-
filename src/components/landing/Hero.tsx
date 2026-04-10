@@ -1,142 +1,133 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Award, Clock, Sparkles } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Clock, MessageCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { GradientMesh, DecorativeShapes } from '../decorative/GradientMesh';
 
-const services = [
-  'Industrial Visits',
-  'Waste Management',
-  'Travel Services',
-  'Event Management',
-  'Legal Support',
-  'Property Solutions',
-  'Finance Services',
-  'Construction',
-  'Interior Design',
-  'Fabrication',
+const rotatingProblems = [
+  'Construction Projects',
+  'Legal & Compliance',
+  'Financial Planning',
+  'Interior Fit-Outs',
+  'Event Execution',
+  'Property Transactions',
+  'Travel Management',
+  'Fabrication Works',
 ];
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => { setIsVisible(true); }, []);
 
   useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  useEffect(() => {
-    const currentService = services[currentServiceIndex];
-    const typingSpeed = isDeleting ? 50 : 100;
-
+    const current = rotatingProblems[currentIndex];
+    const speed = deleting ? 40 : 90;
     const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (displayedText.length < currentService.length) {
-          setDisplayedText(currentService.slice(0, displayedText.length + 1));
+      if (!deleting) {
+        if (displayed.length < current.length) {
+          setDisplayed(current.slice(0, displayed.length + 1));
         } else {
-          setTimeout(() => setIsDeleting(true), 2000);
+          setTimeout(() => setDeleting(true), 2200);
         }
       } else {
-        if (displayedText.length > 0) {
-          setDisplayedText(currentService.slice(0, displayedText.length - 1));
+        if (displayed.length > 0) {
+          setDisplayed(current.slice(0, displayed.length - 1));
         } else {
-          setIsDeleting(false);
-          setCurrentServiceIndex((prev) => (prev + 1) % services.length);
+          setDeleting(false);
+          setCurrentIndex((prev) => (prev + 1) % rotatingProblems.length);
         }
       }
-    }, typingSpeed);
-
+    }, speed);
     return () => clearTimeout(timeout);
-  }, [displayedText, isDeleting, currentServiceIndex]);
+  }, [displayed, deleting, currentIndex]);
 
   return (
-    <section className="relative bg-gradient-to-b from-slate-50 via-white to-white pt-24 pb-20 overflow-hidden">
-      <GradientMesh />
-      <DecorativeShapes />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    <section className="relative min-h-[92vh] flex items-center bg-gradient-to-br from-gray-950 via-gray-900 to-teal-950 overflow-hidden pt-20">
+      {/* Background texture */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:32px_32px]" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/8 rounded-full blur-3xl" />
 
-      <div className="absolute top-20 right-0 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl -z-10 animate-float-slow"></div>
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-100/30 rounded-full blur-3xl -z-10 animate-float" style={{ animationDelay: '1s' }}></div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-          <div className="text-center lg:text-left max-w-2xl">
-            <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-200 rounded-full mb-6 hover:border-teal-400 transition-colors">
-              <Sparkles className="w-4 h-4 text-teal-600 animate-float" style={{ animationDuration: '2s' }} />
-              <span className="text-sm font-semibold text-teal-900">Trusted by 500+ Businesses</span>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-4xl">
+          {/* Eyebrow */}
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 border border-teal-500/30 rounded-full mb-8">
+              <span className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
+              <span className="text-sm font-semibold text-teal-300">India's B2B Specialist Marketplace — Bengaluru & Beyond</span>
             </div>
+          </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Connect with Verified
+          {/* Headline */}
+          <div className={`transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6">
+              Tier 1 Specialists for
               <br />
-              <span className="gradient-text inline-block min-h-[1.2em] font-bold">
-                {displayedText}
-                <span className="inline-block w-0.5 h-[0.9em] bg-gradient-to-b from-teal-600 to-cyan-600 ml-1 animate-pulse align-middle"></span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400 min-h-[1.2em] inline-block">
+                {displayed}
+                <span className="inline-block w-0.5 h-[0.85em] bg-teal-400 ml-1 animate-pulse align-middle" />
               </span>
-              <br />
-              Professionals
             </h1>
+          </div>
 
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">
-              We match your business with pre-vetted, certified vendors across 10+ service categories. Save time, reduce risk, and get quality results from industry-leading professionals.
+          {/* Sub-headline */}
+          <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl">
+              Head Held High connects enterprises with in-house approved, Tier 1 specialists — managing end-to-end B2B service delivery across 9 categories so complex problems get resolved efficiently.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-xl hover:shadow-teal-500/30 transition-all duration-300 shadow-lg hover:-translate-y-0.5 group"
-              >
-                Request a Consultation
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <button
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-teal-600 hover:text-teal-600 hover:bg-teal-50 transition-all duration-300 group"
-              >
-                Browse Services
-              </button>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl">
-              {[
-                { icon: Shield, title: 'Verified Vendors', desc: 'Background-checked professionals' },
-                { icon: Award, title: 'Quality Guaranteed', desc: 'Industry-certified partners' },
-                { icon: Clock, title: 'Fast Turnaround', desc: 'Get matched within 24 hours' },
-              ].map((item, idx) => (
-                <div
-                  key={item.title}
-                  className={`p-6 relative bg-gradient-to-br from-white to-teal-50/30 rounded-xl border border-gray-200/60 shadow-sm hover:shadow-lg hover:border-teal-300 transition-all duration-300 group overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                  style={{ transitionDelay: `${200 + idx * 100}ms` }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-teal-600/5 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-lg flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform">
-                      <item.icon className="w-6 h-6 text-teal-600" />
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-600">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            </div>
           </div>
 
-          <div className={`relative hidden lg:block ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'} transition-all duration-1000`}>
-            <div className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl group border-2 border-teal-200/30">
-              <img
-                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Business professionals collaborating"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/30 transition-all duration-300"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-600/10 via-transparent to-cyan-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-teal-500/25 to-cyan-500/20 rounded-full blur-3xl animate-float-slow"></div>
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-teal-400/20 to-cyan-400/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
+          {/* CTAs */}
+          <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} flex flex-col sm:flex-row gap-4 mb-12`}>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-teal-500/40 transition-all duration-300 hover:-translate-y-1 group text-lg"
+            >
+              Request a Consultation
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <button
+              onClick={() => {
+                const el = document.querySelector('[data-chatbot-trigger]') as HTMLButtonElement;
+                el?.click();
+              }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/15 transition-all duration-300 text-lg backdrop-blur-sm"
+            >
+              <MessageCircle className="w-5 h-5 text-teal-400" />
+              Talk to Our Assistant
+            </button>
           </div>
+
+          {/* Trust signals */}
+          <div className={`transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} flex flex-wrap gap-6`}>
+            {[
+              { icon: ShieldCheck, text: 'All Specialists In-House Verified' },
+              { icon: Clock, text: 'Response Within 24 Hours' },
+              { icon: ArrowRight, text: 'End-to-End B2B Delivery' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-gray-400">
+                <item.icon className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                <span className="text-sm font-medium">{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Floating stat cards */}
+        <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0'} absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4`}>
+          {[
+            { value: '18+', label: 'Years Leadership\nExperience' },
+            { value: '500+', label: 'Verified B2B\nClients' },
+            { value: '2000+', label: 'Projects\nDelivered' },
+            { value: '9', label: 'Service\nCategories' },
+          ].map((stat, i) => (
+            <div key={i} className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl px-5 py-4 text-center hover:bg-white/10 hover:border-teal-500/30 transition-all">
+              <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">{stat.value}</div>
+              <div className="text-xs text-gray-400 mt-1 whitespace-pre-line leading-tight">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
