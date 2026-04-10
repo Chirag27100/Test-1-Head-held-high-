@@ -7,6 +7,7 @@ import {
   HardHat,
   Paintbrush,
   Wrench,
+  Package,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -172,6 +173,24 @@ export const services: Service[] = [
       { title: 'Project Management', description: 'End-to-end oversight of civil construction projects.' },
     ],
     benefits: ['Quality assurance', 'On-time delivery', 'Cost-effective solutions', 'Safety compliance'],
+  },
+  {
+    slug: 'construction-material',
+    name: 'Construction Material Supply',
+    tagline: 'Quality materials, reliable supply',
+    description:
+      'End-to-end construction material procurement and supply for B2B projects. From cement and steel to aggregates and finishing materials, we connect businesses with trusted individual suppliers who ensure consistent quality, competitive pricing, and reliable on-site delivery.',
+    icon: Package,
+    color: 'text-stone-600',
+    gradient: 'from-stone-500 to-amber-700',
+    image: 'https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750',
+    features: [
+      { title: 'Cement & Concrete', description: 'Supply of OPC, PPC, and ready-mix concrete for all project scales.' },
+      { title: 'Steel & TMT Bars', description: 'Structural steel, TMT bars, and reinforcement materials to specification.' },
+      { title: 'Aggregates & Sand', description: 'M-sand, P-sand, aggregates, and granular fill materials.' },
+      { title: 'Finishing Materials', description: 'Tiles, bricks, blocks, and surface finishing materials for project completion.' },
+    ],
+    benefits: ['Competitive bulk pricing', 'On-site delivery', 'Consistent quality', 'Reliable supply chain'],
   },
 ];
 
