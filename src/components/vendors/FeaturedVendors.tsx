@@ -1,14 +1,18 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, MapPin, Award, Briefcase, CheckCircle, ArrowRight, Sparkles, ShieldCheck } from 'lucide-react';
 import { GradientMesh, DecorativeShapes } from '../decorative/GradientMesh';
-import { getFeaturedVendors } from '../../data/vendors';
+import { getFeaturedVendors, type VendorData } from '../../data/vendors';
 import { getServiceBySlug } from '../../data/services';
+import VendorModal from './VendorModal';
 
 export default function FeaturedVendors() {
   const vendors = getFeaturedVendors();
+  const [selectedVendor, setSelectedVendor] = useState<VendorData | null>(null);
 
   return (
     <section className="relative py-20 sm:py-28 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+      <VendorModal vendor={selectedVendor} onClose={() => setSelectedVendor(null)} />
       <GradientMesh />
       <DecorativeShapes />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -33,10 +37,16 @@ export default function FeaturedVendors() {
             return (
               <div
                 key={vendor.id}
-                className="group relative bg-gradient-to-br from-white to-gray-50/50 rounded-2xl border border-gray-200/60 overflow-hidden hover:shadow-2xl hover:border-teal-300/60 transition-all duration-300 hover:-translate-y-2"
+                onClick={() => setSelectedVendor(vendor)}
+                className="group relative bg-gradient-to-br from-white to-gray-50/50 rounded-2xl border border-gray-200/60 overflow-hidden hover:shadow-2xl hover:border-teal-300/60 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-600/5 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className={`h-3 bg-gradient-to-r ${service?.gradient || 'from-gray-400 to-gray-600'} group-hover:h-4 transition-all`} />
+                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                  <span className="text-xs font-medium text-white bg-gray-800/70 px-2 py-1 rounded-full backdrop-blur-sm">
+                    Click for details
+                  </span>
+                </div>
 
                 <div className="p-5 relative z-10">
                   <div className="flex items-start justify-between mb-3">
@@ -115,6 +125,7 @@ export default function FeaturedVendors() {
                     {service && (
                       <Link
                         to={`/services/${vendor.serviceSlug}`}
+                        onClick={(e) => e.stopPropagation()}
                         className="flex-1 text-center px-3 py-2 bg-gray-50 border border-gray-200/60 text-gray-700 font-semibold rounded-xl hover:border-teal-500/60 hover:text-teal-600 hover:bg-teal-50/30 transition-all text-xs"
                       >
                         View Service
@@ -123,6 +134,7 @@ export default function FeaturedVendors() {
                     <Link
                       to="/contact"
                       state={{ service: vendor.serviceName, vendor: vendor.name }}
+                      onClick={(e) => e.stopPropagation()}
                       className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-teal-500/30 transition-all text-xs group/btn hover:-translate-y-0.5"
                     >
                       Contact
