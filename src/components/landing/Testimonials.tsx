@@ -33,7 +33,7 @@ const testimonials = [
   {
     name: 'Amit Desai',
     role: 'Director, Nexus Warehousing',
-    content: 'Creativee Solutions handled our 18,000 sq ft warehouse build end-to-end. HOC was the single point of contact — no follow-ups, no chasing. First time that's happened.',
+    content: 'Creativee Solutions handled our 18,000 sq ft warehouse build end-to-end. HOC was the single point of contact — no follow-ups, no chasing. First time that\'s happened.',
     rating: 5,
     service: 'Turnkey Construction',
     avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100',
