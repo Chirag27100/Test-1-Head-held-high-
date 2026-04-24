@@ -1,28 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, User, Loader2, MessageSquare } from 'lucide-react';
 
-// ⚠️ Replace with your current Groq API key
-const GROQ_KEY = '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';
-const MODEL = 'llama-3.3-70b-versatile';
-
-const SYSTEM_PROMPT = `You are Aarav, the smart and friendly assistant for Head Held High (HOC).
-
-RULES:
-- Keep replies SHORT (2-4 lines max for simple questions)
-- For lists, use clean plain text like "1. Item" — no markdown symbols like * or **
-- Never use asterisks or hashtags
-- Be direct and conversational
-- Only give more detail if specifically asked
-
-Head Held High Info:
-- Free for clients, verified vendors, quotes in 24hrs
-- Services: Construction Material Supply, Event Management, Fabrication, Financial Services (incl. Income Tax Filing), Industrial Visit (in-house), Interior Designers, Para Legal Assistance, Pet Industry Services (in-house), Property Consultants, Travel Consultants, Turnkey Constructions
-- Industrial Visit and Pet Industry Services are managed fully in-house by HOC
-- All specialists are In-House HOC Approved
-- B2B only — enterprise and business clients
-- HOC manages end-to-end delivery
-- Contact: care@headheldhigh.in | +91 94482 00842`;
-
 interface Message { role: 'user' | 'assistant'; content: string; }
 
 function renderMessage(text: string) {
@@ -73,15 +51,10 @@ export default function Chatbot() {
     setInput('');
     setIsLoading(true);
     try {
-      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      const res = await fetch('/api/chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + GROQ_KEY },
-        body: JSON.stringify({
-          model: MODEL,
-          max_tokens: 200,
-          temperature: 0.5,
-          messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...newMsgs]
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: newMsgs })
       });
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
