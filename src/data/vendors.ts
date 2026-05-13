@@ -14,6 +14,11 @@ export interface VendorData {
   verified: boolean;
   featured: boolean;
   badge: string;
+  contact?: {
+    email?: string;
+    phone?: string[];
+    contactPersons?: string[];
+  };
 }
 
 export const vendors: VendorData[] = [
@@ -326,7 +331,7 @@ export const vendors: VendorData[] = [
     name: 'Apex Die Casters',
     tagline: 'ISO 9001:2015 certified precision aluminium die casting since 1989',
     description:
-      'Apex Die Casters is a family-owned, ISO 9001:2015 certified high-pressure aluminium die casting manufacturer based in Bommasandra Industrial Area, Bangalore. Founded in 1989, they serve automotive, electronics, and industrial machinery clients with end-to-end capabilities — from tool design and prototype development to precision casting, CNC machining, and powder coating. Operating 60 to 400 ton HMT and Buhler die-casting lines, they produce parts from 5g to 1,000g for low-to-mid volume programs with consistent quality and on-time delivery.',
+      'Apex Die Casters is a family-owned, ISO 9001:2015 certified high-pressure aluminium die casting manufacturer based in Bommasandra Industrial Area, Bangalore. Founded in 1989, they serve automotive, electronics, and industrial machinery clients. Operating a 5-machine fleet — HMT 60T, 160T, 250T, 400T and Buhler 250T — each with a dedicated furnace. Parts from 5g to 1,000g in any aluminium alloy, with annual programs from 1,000 to 100,000 units. In-house fettling and shot blasting; extended services (vibro, CNC machining, powder coating, tool manufacture) via sister concern Dolphin Die Cast (P) Ltd. GST: 29AABFA7335D1ZP.',
     serviceSlug: 'die-casting',
     serviceName: 'Die Casting',
     expertise: [
@@ -335,14 +340,15 @@ export const vendors: VendorData[] = [
       'Component Redesign & Application Engineering',
       'Prototype Development',
       'Precision CNC Machining of Castings',
-      'Shot Blasting & Vibro Finishing',
+      'Fettling & Shot Blasting',
+      'Vibro Finishing',
       'Powder Coating',
-      'Automotive Components',
-      'Electronics Housings & Connectors',
-      'Industrial Machinery Parts',
+      'Automotive Components (Engine, Transmission, Chassis)',
+      'Electronics Housings, Connectors & Heat Sinks',
+      'Industrial Machinery & Power Tool Parts',
       'Tooling Transfer Programs',
     ],
-    location: 'Bommasandra, Bengaluru, Karnataka',
+    location: 'Bommasandra Industrial Area, Off Hosur Road, Bengaluru 560099',
     yearsInBusiness: 35,
     projectsCompleted: 1800,
     rating: 4.8,
@@ -350,6 +356,11 @@ export const vendors: VendorData[] = [
     verified: true,
     featured: true,
     badge: 'ISO 9001:2015 Certified',
+    contact: {
+      email: 'apexdc@hotmail.com',
+      phone: ['9731038306', '9845642646'],
+      contactPersons: ['Santosh Kumar — 9731038306', 'Vinay Nikam — 9845642646'],
+    },
   },
 ];
 
