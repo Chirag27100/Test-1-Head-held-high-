@@ -289,7 +289,7 @@ export const services: Service[] = [
     name: 'Die Casting',
     tagline: 'Precision high-pressure aluminium die casting at production scale',
     description:
-      'End-to-end high-pressure aluminium die casting for automotive, electronics, and industrial machinery applications. From tooling design and prototype development to precision casting, machining, and powder coating — a single manufacturing partner covering the full production lifecycle. ISO 9001:2015 certified with 35+ years of production-grade manufacturing experience.',
+      'End-to-end high-pressure aluminium die casting for automotive, electronics, and industrial machinery applications. Operating 5 machines from 60 to 400 ton (HMT & Buhler), producing parts from 5g to 1,000g across aluminium alloys. Annual program capacity of 1,000 to 100,000 units. From tooling design and prototype development to precision casting, CNC machining, fettling, shot blasting, and powder coating — a single manufacturing partner covering the full production lifecycle. ISO 9001:2015 certified with 35+ years of production-grade manufacturing experience.',
     icon: Cog,
     color: 'text-slate-600',
     gradient: 'from-slate-600 to-zinc-700',
@@ -298,30 +298,31 @@ export const services: Service[] = [
       {
         title: 'High-Pressure Die Casting',
         description:
-          'Flexible low-to-mid volume production using 60 to 400 ton HMT and Buhler lines. Parts from 5g to 1,000g across aluminium alloys.',
+          'Low-to-mid volume production using 5 machines: HMT 60T, 160T, 250T, 400T and Buhler 250T — each paired with a dedicated furnace. Parts from 5g to 1,000g in any aluminium alloy. Annual program runs of 1,000 to 100,000 units.',
       },
       {
         title: 'Tool Design & Manufacture',
         description:
-          'New mold development, tooling transfer programs, and process conversion planning — aligning design intent with manufacturability from day one.',
+          'New mold design and manufacture, smooth tooling transfer programs, and process conversion to die casting — supported through sister concern Dolphin Die Cast (P) Ltd.',
       },
       {
         title: 'Precision Machining',
         description:
-          'CNC machining of cast components to tight tolerances for ready-to-assemble delivery.',
+          'CNC machining of cast components to tight tolerances for ready-to-assemble delivery, coordinated via Dolphin Die Cast (P) Ltd.',
       },
       {
         title: 'Finishing Services',
         description:
-          'Shot blasting, vibro finishing, and powder coating coordinated through an integrated supply chain — reducing handling steps for your procurement team.',
+          'In-house fettling and shot blasting. Extended finishing — vibro, CNC machining, and powder coating — available through sister concern Dolphin Die Cast (P) Ltd. Single-source supply chain to your door.',
       },
     ],
     benefits: [
       'ISO 9001:2015 certified',
-      'Family-owned — direct accountability',
-      '35+ years production experience',
-      'Integrated tooling to finishing',
-      'Automotive, electronics & industrial sectors',
+      'Family-owned — direct accountability since 1989',
+      '5-machine fleet: 60T to 400T (HMT & Buhler)',
+      'Parts 5g–1,000g, programs 1K–100K units/yr',
+      'Integrated tooling, casting, machining & finishing',
+      'Automotive, electronics & industrial machinery sectors',
     ],
     subServices: [
       {
