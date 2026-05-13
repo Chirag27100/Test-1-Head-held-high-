@@ -76,7 +76,7 @@ export default function Hero() {
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-xl">
-              Head Held High connects you with verified, in-house approved specialists across 11 service categories — for individuals, families, and businesses alike. One call, the right expert, end-to-end support.
+              Head Held High connects you with verified, in-house approved specialists across 12 service categories — for individuals, families, and businesses alike. One call, the right expert, end-to-end support.
             </p>
 
             {/* CTAs */}
