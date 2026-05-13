@@ -209,6 +209,7 @@ export const services: Service[] = [
       { title: 'Pet Swimming Pool', description: 'Supervised hydrotherapy and recreational swimming sessions in clean, temperature-controlled pools for dogs and other pets.' },
       { title: 'Boarding Services', description: 'Safe, comfortable overnight boarding with round-the-clock supervision, feeding schedules, and daily activity routines.' },
       { title: 'Day Care Programs', description: 'Structured daytime care with socialisation, play sessions, and trained staff — perfect for working pet owners.' },
+      { title: 'Pet Relocation', description: 'End-to-end pet relocation services — domestic and international. Handling transport logistics, vet documentation, airline coordination, and safe handover at destination.' },
     ],
     benefits: ['In-house HOC managed', 'Verified pet care professionals', 'Safe & hygienic facilities', 'Flexible booking options'],
     inHouse: true,
