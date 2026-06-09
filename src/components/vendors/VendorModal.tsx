@@ -43,17 +43,17 @@ export default function VendorModal({ vendor, onClose }: VendorModalProps) {
   const ServiceIcon = service?.icon;
 
   return (
-    // Backdrop
+    // Backdrop — scrolls so modal never gets clipped above viewport
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+      className="fixed inset-0 z-50 overflow-y-auto"
       style={{ backgroundColor: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(4px)' }}
       onClick={onClose}
     >
+      <div className="flex min-h-full items-center justify-center p-4 sm:p-6">
       {/* Modal panel */}
       <div
-        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl animate-modal-in"
+        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-modal-in"
         onClick={(e) => e.stopPropagation()}
-        style={{ maxHeight: '90dvh', overflowY: 'auto', overflowX: 'hidden', WebkitOverflowScrolling: 'touch' }}
       >
         {/* Gradient top bar */}
         <div className={`h-2 bg-gradient-to-r ${service?.gradient || 'from-teal-500 to-cyan-500'}`} />
@@ -182,6 +182,7 @@ export default function VendorModal({ vendor, onClose }: VendorModalProps) {
           animation: modalIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) both;
         }
       `}</style>
+      </div>
     </div>
   );
 }
