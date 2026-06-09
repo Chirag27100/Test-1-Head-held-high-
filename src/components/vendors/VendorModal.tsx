@@ -51,9 +51,9 @@ export default function VendorModal({ vendor, onClose }: VendorModalProps) {
     >
       {/* Modal panel */}
       <div
-        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-modal-in"
+        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl animate-modal-in"
         onClick={(e) => e.stopPropagation()}
-        style={{ maxHeight: '90dvh', overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}
+        style={{ maxHeight: '90dvh', overflowY: 'auto', overflowX: 'hidden', WebkitOverflowScrolling: 'touch' }}
       >
         {/* Gradient top bar */}
         <div className={`h-2 bg-gradient-to-r ${service?.gradient || 'from-teal-500 to-cyan-500'}`} />

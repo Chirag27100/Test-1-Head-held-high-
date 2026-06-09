@@ -201,7 +201,7 @@ export const vendors: VendorData[] = [
     name: 'Para Legal Specialist',
     tagline: 'Specialized government liaison, land approvals & legal documentation expert',
     description:
-      'An experienced individual domain expert handling the full spectrum of paralegal work — from revenue office liaisons, revenue liaising with DC offices, and land use approvals to certificates, khata transfers, and property tax assistance. Specialises in coordinating with Revenue departments for land records, RTC extracts, mutation entries, and survey settlements. Deep working knowledge of BBMP, BDA, BMRDA, KIADB, and all Karnataka government departments.',
+      'An experienced domain specialist managing the full spectrum of paralegal and official documentation work — land use approvals, khata transfers, property tax matters, RTC extracts, mutation entries, and survey settlements. We liaise directly with all relevant government authorities on your behalf to get your documents processed, verified, and approved. You hand us the task; we handle every office visit, submission, and follow-up until the work is done.',
     serviceSlug: 'Para Legal Assistance',
     serviceName: 'Para Legal Assistance',
     expertise: [
