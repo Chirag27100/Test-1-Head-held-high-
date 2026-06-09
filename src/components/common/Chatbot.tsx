@@ -81,9 +81,9 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3 pointer-events-none" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
       <div
-        className={`origin-bottom-right ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-90 pointer-events-none'}`}
+        className={`origin-bottom-right pointer-events-auto ${isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'}`}
         style={{
           transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0s ' + (isOpen ? '0s' : '0.3s'),
           visibility: isOpen ? 'visible' : 'hidden',
@@ -191,7 +191,7 @@ export default function Chatbot() {
       <button
         data-chatbot-trigger="true"
         onClick={() => setIsOpen(p => !p)}
-        className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95"
+        className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 pointer-events-auto"
       >
         {isOpen ? <X className="w-6 h-6 text-white" /> : <MessageCircle className="w-6 h-6 text-white" />}
       </button>
