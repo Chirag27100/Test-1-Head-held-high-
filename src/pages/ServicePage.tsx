@@ -26,14 +26,13 @@ function VendorModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 overflow-y-auto"
+      style={{ backgroundColor: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(4px)' }}
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-
+      <div className="flex min-h-full items-center justify-center p-4">
       <div
-        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg overflow-y-auto z-10"
-        style={{ maxHeight: '90dvh', WebkitOverflowScrolling: 'touch' }}
+        className="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden"
         style={{ animation: 'popIn 0.25s cubic-bezier(0.34,1.56,0.64,1) both' }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -133,6 +132,7 @@ function VendorModal({
             </Link>
           </div>
         </div>
+      </div>
       </div>
 
       <style>{`

@@ -103,17 +103,20 @@ export default function Hero() {
 
             {/* Stats bar — inline below CTAs */}
             <div className="flex items-stretch gap-3 mb-8">
-              <div className="flex-1 flex flex-col items-center justify-center py-5 px-3 rounded-2xl border border-amber-400/40 shadow-lg shadow-amber-500/20" style={{background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)'}}>
-                <span className="text-3xl font-black text-white leading-none mb-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">2000+</span>
-                <span className="text-[11px] font-bold text-amber-100 uppercase tracking-widest text-center">Projects Done</span>
+              <div className="group relative flex-1 flex flex-col items-center justify-center py-5 px-3 rounded-2xl border border-amber-400/40 shadow-lg shadow-amber-500/20 overflow-hidden cursor-default transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/40 hover:border-amber-300/70" style={{background: 'linear-gradient(135deg, #b45309 0%, #d97706 100%)'}}>
+                <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{backdropFilter: 'blur(2px)'}} />
+                <span className="relative text-3xl font-black text-white leading-none mb-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">2000+</span>
+                <span className="relative text-[11px] font-bold text-amber-100 uppercase tracking-widest text-center">Projects Done</span>
               </div>
-              <div className="flex-1 flex flex-col items-center justify-center py-5 px-3 rounded-2xl border border-violet-400/40 shadow-lg shadow-violet-500/20" style={{background: 'linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%)'}}>
-                <span className="text-3xl font-black text-white leading-none mb-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">500+</span>
-                <span className="text-[11px] font-bold text-violet-200 uppercase tracking-widest text-center">Happy Clients</span>
+              <div className="group relative flex-1 flex flex-col items-center justify-center py-5 px-3 rounded-2xl border border-violet-400/40 shadow-lg shadow-violet-500/20 overflow-hidden cursor-default transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:shadow-violet-500/40 hover:border-violet-300/70" style={{background: 'linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%)'}}>
+                <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{backdropFilter: 'blur(2px)'}} />
+                <span className="relative text-3xl font-black text-white leading-none mb-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">500+</span>
+                <span className="relative text-[11px] font-bold text-violet-200 uppercase tracking-widest text-center">Happy Clients</span>
               </div>
-              <div className="flex-1 flex flex-col items-center justify-center py-5 px-3 rounded-2xl border border-rose-400/40 shadow-lg shadow-rose-500/20" style={{background: 'linear-gradient(135deg, #9f1239 0%, #e11d48 100%)'}}>
-                <span className="text-3xl font-black text-white leading-none mb-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">98%</span>
-                <span className="text-[11px] font-bold text-rose-200 uppercase tracking-widest text-center">Satisfaction</span>
+              <div className="group relative flex-1 flex flex-col items-center justify-center py-5 px-3 rounded-2xl border border-rose-400/40 shadow-lg shadow-rose-500/20 overflow-hidden cursor-default transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:shadow-rose-500/40 hover:border-rose-300/70" style={{background: 'linear-gradient(135deg, #9f1239 0%, #e11d48 100%)'}}>
+                <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{backdropFilter: 'blur(2px)'}} />
+                <span className="relative text-3xl font-black text-white leading-none mb-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">98%</span>
+                <span className="relative text-[11px] font-bold text-rose-200 uppercase tracking-widest text-center">Satisfaction</span>
               </div>
             </div>
 
