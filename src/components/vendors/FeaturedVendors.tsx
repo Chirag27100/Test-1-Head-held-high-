@@ -42,7 +42,7 @@ export default function FeaturedVendors() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-600/5 to-cyan-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className={`h-3 bg-gradient-to-r ${service?.gradient || 'from-gray-400 to-gray-600'} group-hover:h-4 transition-all`} />
-                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                <div className="absolute top-4 left-4 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity z-20">
                   <span className="text-xs font-medium text-white bg-gray-800/70 px-2 py-1 rounded-full backdrop-blur-sm">
                     Click for details
                   </span>
@@ -135,7 +135,7 @@ export default function FeaturedVendors() {
                       to="/contact"
                       state={{ service: vendor.serviceName, vendor: vendor.name }}
                       onClick={(e) => e.stopPropagation()}
-                      className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-teal-500/30 transition-all text-xs group/btn hover:-translate-y-0.5"
+                      className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-teal-500/30 transition-all text-xs group/btn sm:hover:-translate-y-0.5"
                     >
                       Contact
                       <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -150,7 +150,7 @@ export default function FeaturedVendors() {
         <div className="text-center mt-12">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-teal-500/30 transition-all duration-300 hover:-translate-y-1 group"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-teal-500/30 transition-all duration-300 sm:hover:-translate-y-1 group"
           >
             Get Matched With a Specialist
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

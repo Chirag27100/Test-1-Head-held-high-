@@ -253,7 +253,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      <div ref={mobileMenuRef} className={`lg:hidden transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-[85vh] opacity-100 overflow-y-auto' : 'max-h-0 opacity-0'}`}>
+      <div ref={mobileMenuRef} className={`lg:hidden transition-all duration-300 ${isOpen ? 'max-h-[calc(100dvh-4rem)] opacity-100 overflow-y-auto' : 'max-h-0 opacity-0 overflow-hidden'}`}>
         <div className="bg-[#ede8de] border-t border-[#d8d0be] px-4 py-3 space-y-1">
           <Link to="/" className="block px-4 py-2.5 text-gray-700 hover:text-gray-900 hover:bg-black/8 rounded-lg text-sm font-medium">Home</Link>
           <Link to="/about" className="block px-4 py-2.5 text-gray-700 hover:text-gray-900 hover:bg-black/8 rounded-lg text-sm font-medium">About</Link>

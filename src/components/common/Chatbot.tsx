@@ -82,7 +82,13 @@ export default function Chatbot() {
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-      <div className={`transition-all duration-300 ease-in-out origin-bottom-right ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-90 pointer-events-none'}`}>
+      <div
+        className={`origin-bottom-right ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-90 pointer-events-none'}`}
+        style={{
+          transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0s ' + (isOpen ? '0s' : '0.3s'),
+          visibility: isOpen ? 'visible' : 'hidden',
+        }}
+      >
         <div className="w-[calc(100vw-32px)] sm:w-[360px] max-w-[360px] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden" style={{ height: 'min(500px, calc(100dvh - 100px))' }}>
 
           {/* Header */}
