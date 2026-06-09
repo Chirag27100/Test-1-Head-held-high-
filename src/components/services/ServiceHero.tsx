@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronRight, ShieldCheck } from 'lucide-react';
+import { ChevronRight, ShieldCheck } from 'lucide-react';
 import type { Service } from '../../data/services';
 
 interface ServiceHeroProps {
@@ -53,17 +53,9 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              to="/contact"
-              state={{ service: service.name }}
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-teal-500/25 transition-all duration-300 hover:-translate-y-0.5 group"
-            >
-              Get a Quote
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
             <a
               href="tel:+919448200842"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-teal-500/25 transition-all duration-300 hover:-translate-y-0.5"
             >
               Talk to an Expert
             </a>
