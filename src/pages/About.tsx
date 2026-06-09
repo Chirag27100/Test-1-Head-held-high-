@@ -127,7 +127,7 @@ export default function About() {
                   />
                   <div className="p-6 grid grid-cols-2 gap-4">
                     {[
-                      { label: 'Founded', value: '2022' },
+                      { label: 'Founded', value: '2020' },
                       { label: 'Headquarters', value: 'Bengaluru, IN' },
                       { label: 'Team Size', value: '50+' },
                       { label: 'Client Satisfaction', value: '98%' },

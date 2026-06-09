@@ -84,14 +84,14 @@ export default function WhyChooseUs() {
                 <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Planning" className="w-full h-full object-cover" />
               </div>
             </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl border border-gray-100 px-6 py-4 z-10">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">18+</div>
-                <div>
-                  <p className="text-sm font-bold text-gray-900">Years of Experience</p>
-                  <p className="text-xs text-gray-500">Behind every placement</p>
-                </div>
+          </div>
+          {/* Badge below the grid */}
+          <div className="mt-6 flex justify-start">
+            <div className="inline-flex items-center gap-3 bg-white rounded-2xl shadow-lg border border-gray-100 px-6 py-4">
+              <div className="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">18+</div>
+              <div>
+                <p className="text-sm font-bold text-gray-900">Years of Experience</p>
+                <p className="text-xs text-gray-500">Behind every placement</p>
               </div>
             </div>
           </div>
