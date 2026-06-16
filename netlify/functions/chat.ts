@@ -1,3 +1,9 @@
+import type { Handler } from '@netlify/functions';
+
+const GROQ_KEY = process.env.GROQ_API_KEY || '';
+const MODEL = 'llama-3.3-70b-versatile';
+
+const SYSTEM_PROMPT = `You are VELA, the smart and friendly assistant for Head Held High (HOC).
 
 RULES:
 - Keep replies SHORT (2-4 lines max for simple questions)
